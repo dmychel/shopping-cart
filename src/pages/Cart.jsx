@@ -5,7 +5,7 @@ const Cart = ({ cart }) => {
 };
 
 Cart.propTypes = {
-  cart: PropTypes.string,
+  cart: PropTypes.array,
 };
 
 export default Cart;
