@@ -1,3 +1,6 @@
+// react
+import { useState } from "react";
+
 // react router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -16,6 +19,8 @@ import HelpLayout from "./layouts/help/HelpLayout";
 import Faq from "./pages/Faq";
 
 function App() {
+  const [cart, setCart] = useState([1, 2, 3]);
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -24,11 +29,11 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home />,
+          element: <Home cart={cart} />,
         },
         {
           path: "cart",
-          element: <Cart />,
+          element: <Cart cart={cart} setCart={setCart} />,
         },
         {
           path: "help",
