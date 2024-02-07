@@ -1,5 +1,5 @@
 // react
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // react router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -14,13 +14,12 @@ import RootLayout from "./layouts/RootLayout";
 import Cart from "./pages/Cart";
 import ErrorPage from "./pages/ErrorPage";
 import Home from "./pages/Home";
-import Products from "./pages/Products";
+import Products from "./pages/products/Products";
 import HelpLayout from "./layouts/help/HelpLayout";
 import Faq from "./pages/Faq";
 
 function App() {
   const [cart, setCart] = useState([1, 2, 3]);
-
   const router = createBrowserRouter([
     {
       path: "/",
