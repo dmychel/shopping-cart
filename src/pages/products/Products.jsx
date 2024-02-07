@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 // components
 import Item from "./Item";
 
-const Products = ({ cart, setCart }) => {
+const Products = ({ cart, setCart, handleSubmit }) => {
   const [productsArr, setProductsArr] = useState([]);
   useEffect(() => {
     callApi();
@@ -25,7 +25,12 @@ const Products = ({ cart, setCart }) => {
     <div className="products">
       {productsArr.map((item) => (
         <div className="card" key={item.id}>
-          <Item cart={cart} setCart={setCart} item={item} />
+          <Item
+            cart={cart}
+            setCart={setCart}
+            item={item}
+            handleSubmit={handleSubmit}
+          />
         </div>
       ))}
     </div>
@@ -35,6 +40,7 @@ const Products = ({ cart, setCart }) => {
 Products.propTypes = {
   cart: PropTypes.array,
   setCart: PropTypes.func,
+  handleSubmit: PropTypes.func,
 };
 
 export default Products;
