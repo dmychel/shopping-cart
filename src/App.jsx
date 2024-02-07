@@ -20,6 +20,11 @@ import Faq from "./pages/Faq";
 
 function App() {
   const [cart, setCart] = useState();
+  const handleSubmit = (e, item, quantity) => {
+    e.preventDefault();
+    console.log(item, quantity);
+  };
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -46,7 +51,7 @@ function App() {
         },
         {
           path: "products",
-          element: <Products />,
+          element: <Products handleSubmit={handleSubmit} />,
         },
       ],
     },
