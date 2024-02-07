@@ -1,5 +1,5 @@
 // react
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // react router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
