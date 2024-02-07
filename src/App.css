@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 8px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #282a36;
+  color: wheat;
+}
+
+header {
+  top: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  background: #44475a;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  padding: 20px;
+  font-size: 2rem;
+}
+
+a:link {
+  color: wheat;
+  text-decoration: none;
+}
+
+a:visited {
+  color: wheat;
+}
+
+/* products */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 2em;
+}
+
+/* card */
+.card {
+  border: 2px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 400px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 200px;
+  height: 200px;
+}
+
+.card form {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.card .submit {
+  cursor: pointer;
+}
+
+/* help layout */
+
+.help-layout nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px 0;
+}
+.help-layout nav a {
+  padding: 10px;
+  border: 3px solid #44475a;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.help-layout nav a:hover {
+  transform: scale(1.1);
+}
+
+.help-layout nav a.active {
+  background-color: #f1fa8c;
+  color: black;
+}
+
+/* faq */
+.faq .question {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 5px 20px;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+/* error */
+.error-page {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
