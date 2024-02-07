@@ -1,4 +1,3 @@
-// props
 import PropTypes from "prop-types";
 
 const Products = ({ cart }) => {
