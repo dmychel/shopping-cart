@@ -19,7 +19,7 @@ import HelpLayout from "./layouts/help/HelpLayout";
 import Faq from "./pages/Faq";
 
 function App() {
-  const [cart, setCart] = useState([1, 2, 3]);
+  const [cart, setCart] = useState();
   const router = createBrowserRouter([
     {
       path: "/",
