@@ -26,8 +26,13 @@ header nav {
   display: flex;
   justify-content: space-between;
   width: 90%;
-  padding: 20px;
-  font-size: 2rem;
+  font-size: 1rem;
+}
+
+.header-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 a:link {
