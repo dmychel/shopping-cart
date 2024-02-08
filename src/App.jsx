@@ -22,11 +22,42 @@ function App() {
   const [cart, setCart] = useState([]);
   const handleSubmit = (e, item, quantity) => {
     e.preventDefault();
+
     const newItem = {
       item: item.title,
       price: item.price,
-      quantity: quantity,
+      quantity: Number(quantity),
     };
+    scanItem(newItem);
+  };
+
+  const scanItem = (item) => {
+    if (item.quantity > 1) {
+      const arr = duplicateItem(item);
+      addToCart(arr);
+    } else {
+      addToCart(item);
+    }
+  };
+
+  const duplicateItem = (item) => {
+    let arr = [];
+    for (let i = 0; i < item.quantity; i++) {
+      const dupItem = { ...item };
+      dupItem.quantity = 1;
+      arr.push(dupItem);
+    }
+    return arr;
+  };
+
+  const addToCart = (product) => {
+    if (product instanceof Array) {
+      product.map((item) => {
+        setCart((currentCart) => [...currentCart, item]);
+      });
+    } else {
+      setCart([...cart, product]);
+    }
   };
 
   return (
