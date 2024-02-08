@@ -2,13 +2,13 @@
 import { useState } from "react";
 
 // react router
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 
 // css
 import "./App.css";
 
-// layouts
-import RootLayout from "./layouts/RootLayout";
+// // layouts
+// import RootLayout from "./layouts/RootLayout";
 
 // pages
 import Cart from "./pages/Cart";
@@ -19,45 +19,43 @@ import HelpLayout from "./layouts/help/HelpLayout";
 import Faq from "./pages/Faq";
 
 function App() {
-  const [cart, setCart] = useState();
+  const [cart, setCart] = useState([]);
   const handleSubmit = (e, item, quantity) => {
     e.preventDefault();
-    console.log(item, quantity);
+    const newItem = {
+      item: item.title,
+      price: item.price,
+      quantity: quantity,
+    };
   };
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <RootLayout />,
-      errorElement: <ErrorPage />,
-      children: [
-        {
-          path: "/",
-          element: <Home cart={cart} />,
-        },
-        {
-          path: "cart",
-          element: <Cart cart={cart} setCart={setCart} />,
-        },
-        {
-          path: "help",
-          element: <HelpLayout />,
-          children: [
-            {
-              path: "faq",
-              element: <Faq />,
-            },
-          ],
-        },
-        {
-          path: "products",
-          element: <Products handleSubmit={handleSubmit} />,
-        },
-      ],
-    },
-  ]);
-
-  return <RouterProvider router={router} />;
+  return (
+    <BrowserRouter>
+      <header>
+        <nav>
+          <NavLink to="/">
+            <h1>Serena</h1>
+          </NavLink>
+          <div className="header-cart">
+            <NavLink to="cart">Cart</NavLink>
+            <p>{cart.length}</p>
+          </div>
+        </nav>
+      </header>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="products"
+          element={<Products handleSubmit={handleSubmit} />}
+        />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="help" element={<HelpLayout />}>
+          <Route path="faq" element={<Faq />} />
+        </Route>
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
