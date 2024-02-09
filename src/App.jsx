@@ -80,7 +80,7 @@ function App() {
             path="products"
             element={<Products handleSubmit={handleSubmit} />}
           />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<Cart cart={cart} />} />
           <Route path="help" element={<HelpLayout />}>
             <Route path="faq" element={<Faq />} />
           </Route>
