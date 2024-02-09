@@ -51,8 +51,8 @@ header nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   border-radius: 100%;
 }
 
@@ -68,7 +68,7 @@ a:visited {
 /* home */
 .home {
   margin-top: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 2em;
@@ -158,15 +158,17 @@ a:visited {
 }
 
 .delivery {
+  display: flex;
+  justify-content: center;
   width: 50%;
-  border: 2px solid;
+  height: 90%;
 }
 
 .delivery form {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  gap: 1em;
+  width: 80%;
+  gap: 0.35em;
 }
 
 .summary {
@@ -174,6 +176,7 @@ a:visited {
   flex-direction: column;
   width: 50%;
   border: 2px solid;
+  height: 90%;
 }
 
 .summary div {
