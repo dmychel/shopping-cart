@@ -19,6 +19,13 @@ const Cart = ({ cart }) => {
     const calcTaxes = price * 0.0625;
     setTaxes(calcTaxes);
   }, [price]);
+
+  // total
+  useEffect(() => {
+    const calcTotal = price + taxes;
+    setTotal(calcTotal);
+  }, [taxes, price]);
+
   return (
     <div className="cart">
       <section className="cart-items">
