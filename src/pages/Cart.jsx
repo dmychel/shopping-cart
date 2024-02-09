@@ -30,6 +30,7 @@ const Cart = ({ cart, deleteItem }) => {
     setTotal(rounded);
   }, [taxes, price]);
 
+  // round number to smaller decimal
   const reduceDec = (num) => {
     const rounded = new Intl.NumberFormat("en-US", {
       maximumFractionDigits: 2,
