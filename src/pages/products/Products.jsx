@@ -16,6 +16,7 @@ const Products = ({ cart, setCart, handleSubmit }) => {
     callApi();
   }, []);
 
+  // gets products from api
   const callApi = async () => {
     const arr = await fetchApiCall();
     return setProductsArr(arr);
