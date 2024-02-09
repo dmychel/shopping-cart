@@ -10,11 +10,12 @@ const Item = ({ item, handleSubmit }) => {
       <p>{item.title}</p>
       <form onSubmit={(e) => handleSubmit(e, item, quantity)}>
         <input
+          className="quantity"
           type="number"
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
         />
-        <input type="submit" className="submit" />
+        <input type="submit" className="submit" value="+" />
       </form>
     </>
   );
