@@ -24,7 +24,8 @@ function App() {
     e.preventDefault();
 
     const newItem = {
-      item: item.title,
+      image: item.image,
+      title: item.title,
       price: item.price,
       quantity: Number(quantity),
     };
@@ -45,6 +46,7 @@ function App() {
     for (let i = 0; i < item.quantity; i++) {
       const dupItem = { ...item };
       dupItem.quantity = 1;
+      dupItem.id = crypto.randomUUID();
       arr.push(dupItem);
     }
     return arr;
