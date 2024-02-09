@@ -20,6 +20,8 @@ import Faq from "./pages/Faq";
 
 function App() {
   const [cart, setCart] = useState([]);
+
+  // form submition
   const handleSubmit = (e, item, quantity) => {
     e.preventDefault();
 
@@ -32,6 +34,7 @@ function App() {
     scanItem(newItem);
   };
 
+  // determine if item has quanity greater than 1
   const scanItem = (item) => {
     if (item.quantity > 1) {
       const arr = duplicateItem(item);
@@ -42,6 +45,7 @@ function App() {
     }
   };
 
+  // duplicate item in array
   const duplicateItem = (item) => {
     let arr = [];
     for (let i = 0; i < item.quantity; i++) {
@@ -53,6 +57,7 @@ function App() {
     return arr;
   };
 
+  // add to cart
   const addToCart = (product) => {
     if (product instanceof Array) {
       product.map((item) => {
@@ -63,6 +68,7 @@ function App() {
     }
   };
 
+  // delete item from cart
   const deleteItem = (item) => {
     const newCart = cart.filter((product) => product.id !== item.id);
     setCart(newCart);
