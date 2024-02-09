@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-const Cart = ({ cart }) => {
+const Cart = ({ cart, deleteItem }) => {
   const [price, setPrice] = useState(0);
   const [total, setTotal] = useState(0);
   const [taxes, setTaxes] = useState(0);
@@ -43,7 +43,9 @@ const Cart = ({ cart }) => {
       <section className="cart-items">
         {cart.map((item) => (
           <div className="cart-card" key={item.id}>
-            <span className="delete">&#10005;</span>
+            <span className="delete" onClick={() => deleteItem(item)}>
+              &#10005;
+            </span>
             <img src={item.image} alt="item-preview" />
             <p>{item.title}</p>
             <span className="price">${item.price}</span>
@@ -86,6 +88,7 @@ const Cart = ({ cart }) => {
 
 Cart.propTypes = {
   cart: PropTypes.array,
+  deleteItem: PropTypes.func,
 };
 
 export default Cart;
