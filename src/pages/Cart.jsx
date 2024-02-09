@@ -1,5 +1,9 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
 const Cart = ({ cart }) => {
+  const [price, setPrice] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [taxes, setTaxes] = useState(0);
   return (
     <div className="cart">
       <section className="cart-items">
@@ -26,19 +30,19 @@ const Cart = ({ cart }) => {
         <div className="summary">
           <div>
             <span>Subtotal</span>
-            <span>0</span>
+            <span>{price}</span>
           </div>
           <div>
             <span>Delivery</span>
-            <span>0</span>
+            <span> -- </span>
           </div>
           <div>
             <span>Taxes</span>
-            <span>0</span>
+            <span>{taxes}</span>
           </div>
           <div>
             <span>Total</span>
-            <span>0</span>
+            <span>{total}</span>
           </div>
         </div>
       </section>
