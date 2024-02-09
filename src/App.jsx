@@ -73,18 +73,48 @@ function App() {
           </div>
         </nav>
       </header>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="products"
-          element={<Products handleSubmit={handleSubmit} />}
-        />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="help" element={<HelpLayout />}>
-          <Route path="faq" element={<Faq />} />
-        </Route>
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="products"
+            element={<Products handleSubmit={handleSubmit} />}
+          />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="help" element={<HelpLayout />}>
+            <Route path="faq" element={<Faq />} />
+          </Route>
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </main>
+      <footer>
+        <nav>
+          <NavLink to="help">Help</NavLink>
+          <a
+            href="https://github.com/dmychel/shopping-cart"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="/assets/icons/github.png"
+              alt="Github"
+              title="repo for project"
+            />
+          </a>
+
+          <a
+            href="https://dyloncrowley.netlify.app"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="/assets/icons/resume.png"
+              alt="Portfolio"
+              title="portfolio"
+            />
+          </a>
+        </nav>
+      </footer>
     </BrowserRouter>
   );
 }
