@@ -1,6 +1,11 @@
 import { Outlet, NavLink } from "react-router-dom";
+import { useEffect } from "react";
 
 const HelpLayout = () => {
+  useEffect(() => {
+    console.log("window scroll run");
+    window.scrollTo(0, document.body.scrollHeight);
+  }, []);
   return (
     <div className="help-layout">
       <h2>Website Help</h2>
