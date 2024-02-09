@@ -3,7 +3,11 @@
   padding: 8px;
 }
 
-main {
+main::not(.home) {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
   margin-top: 5%;
 }
 
@@ -24,19 +28,30 @@ header {
   align-items: center;
   width: 100vw;
   background: #44475a;
+  position: sticky;
 }
 
 header nav {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 .header-cart {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.header-cart span {
+  border: 2px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
 }
 
 a:link {
@@ -46,6 +61,35 @@ a:link {
 
 a:visited {
   color: wheat;
+}
+
+/* home */
+.home {
+  margin-top: 0;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: center;
+  height: 100%;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: #8080803c;
+  max-height: 30%;
+  width: 100%;
+}
+
+.hero img {
+  max-width: 50%;
+}
+
+.home a:link {
+  border: 3px solid;
 }
 
 /* products */
@@ -87,6 +131,12 @@ a:visited {
 
 /* help layout */
 
+.help-layout {
+  height: 100vh;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
 .help-layout nav {
   display: flex;
   justify-content: center;
@@ -111,6 +161,7 @@ a:visited {
 
 /* faq */
 .faq .question {
+  text-align: left;
   background: rgba(0, 0, 0, 0.2);
   padding: 5px 20px;
   border-radius: 4px;
