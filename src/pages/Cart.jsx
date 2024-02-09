@@ -5,9 +5,10 @@ const Cart = ({ cart }) => {
       <section className="cart-items">
         {cart.map((item) => (
           <div className="cart-card" key={item.id}>
-            <span>&#10005;</span>
+            <span className="delete">&#10005;</span>
             <img src={item.image} alt="item-preview" />
             <p>{item.title}</p>
+            <span className="price">${item.price}</span>
           </div>
         ))}
       </section>
