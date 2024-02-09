@@ -180,10 +180,11 @@ a:visited {
 
 .cart-card {
   justify-content: space-around;
+  align-items: center;
   text-align: center;
   border: 2px solid;
   width: 300px;
-  height: 400px;
+  height: 550px;
 }
 
 .cart-card img {
@@ -191,7 +192,11 @@ a:visited {
   width: 250px;
 }
 
-.cart-card span {
+.price {
+  font-size: 1.5rem;
+}
+
+.delete {
   font-size: 1.5rem;
   display: flex;
   justify-content: end;
