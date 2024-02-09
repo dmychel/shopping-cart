@@ -9,7 +9,9 @@ const Cart = ({ cart }) => {
   useEffect(() => {
     let sum = 0;
     for (let i = 0; i < cart.length; i++) {
-      sum += cart[i].price;
+      const itemPrice = cart[i].price;
+      const rounded = reduceDec(itemPrice);
+      sum += rounded;
     }
     setPrice(sum);
   }, [cart]);
@@ -17,14 +19,24 @@ const Cart = ({ cart }) => {
   // taxes
   useEffect(() => {
     const calcTaxes = price * 0.0625;
-    setTaxes(calcTaxes);
+    const rounded = reduceDec(calcTaxes);
+    setTaxes(rounded);
   }, [price]);
 
   // total
   useEffect(() => {
     const calcTotal = price + taxes;
-    setTotal(calcTotal);
+    const rounded = reduceDec(calcTotal);
+    setTotal(rounded);
   }, [taxes, price]);
+
+  const reduceDec = (num) => {
+    const rounded = new Intl.NumberFormat("en-US", {
+      maximumFractionDigits: 2,
+    }).format(num);
+    Number(rounded);
+    return Number(rounded);
+  };
 
   return (
     <div className="cart">
