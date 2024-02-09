@@ -1,6 +1,6 @@
 # Serena Shopping
 
-Welcome to Serena Shopping! This is a a simple page to mock the checkout process of an ecommerce website. This project is not meant to be very complex nor be very UI impressive. The goal of this project is to demonstrate the use of React Router Dom and my ability to build an app that is more applicable to something I'd be working on as a professional in the field.
+Welcome to Serena Shopping! This is a a simple web app that mocks the checkout process of an ecommerce website. This project is not meant to be very complex nor be very UI impressive. The goal of this project is to demonstrate the use of React Router Dom and my ability to build an app that is more applicable to something I'd be working on as a professional in the field.
 
 # VERSION 1.0
 
