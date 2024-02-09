@@ -5,6 +5,7 @@ const Cart = ({ cart }) => {
   const [total, setTotal] = useState(0);
   const [taxes, setTaxes] = useState(0);
 
+  // subtotal
   useEffect(() => {
     let sum = 0;
     for (let i = 0; i < cart.length; i++) {
@@ -12,6 +13,12 @@ const Cart = ({ cart }) => {
     }
     setPrice(sum);
   }, [cart]);
+
+  // taxes
+  useEffect(() => {
+    const calcTaxes = price * 0.0625;
+    setTaxes(calcTaxes);
+  }, [price]);
   return (
     <div className="cart">
       <section className="cart-items">
