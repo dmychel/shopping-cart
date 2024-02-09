@@ -64,7 +64,7 @@ const Cart = ({ cart }) => {
         <div className="summary">
           <div>
             <span>Subtotal</span>
-            <span>{price}</span>
+            <span>${price}</span>
           </div>
           <div>
             <span>Delivery</span>
@@ -72,11 +72,11 @@ const Cart = ({ cart }) => {
           </div>
           <div>
             <span>Taxes</span>
-            <span>{taxes}</span>
+            <span>${taxes}</span>
           </div>
           <div>
             <span>Total</span>
-            <span>{total}</span>
+            <span>${total}</span>
           </div>
         </div>
       </section>
