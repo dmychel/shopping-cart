@@ -37,6 +37,7 @@ function App() {
       const arr = duplicateItem(item);
       addToCart(arr);
     } else {
+      item.id = crypto.randomUUID();
       addToCart(item);
     }
   };
@@ -62,6 +63,11 @@ function App() {
     }
   };
 
+  const deleteItem = (item) => {
+    const newCart = cart.filter((product) => product.id !== item.id);
+    setCart(newCart);
+  };
+
   return (
     <BrowserRouter>
       <header>
@@ -82,7 +88,10 @@ function App() {
             path="products"
             element={<Products handleSubmit={handleSubmit} />}
           />
-          <Route path="/cart" element={<Cart cart={cart} />} />
+          <Route
+            path="/cart"
+            element={<Cart cart={cart} deleteItem={deleteItem} />}
+          />
           <Route path="help" element={<HelpLayout />}>
             <Route path="faq" element={<Faq />} />
           </Route>
