@@ -10,10 +10,10 @@ const Cart = ({ cart, deleteItem }) => {
     let sum = 0;
     for (let i = 0; i < cart.length; i++) {
       const itemPrice = cart[i].price;
-      const rounded = reduceDec(itemPrice);
-      sum += rounded;
+      sum += itemPrice;
     }
-    setPrice(sum);
+    const rounded = reduceDec(sum);
+    setPrice(rounded);
   }, [cart]);
 
   // taxes
