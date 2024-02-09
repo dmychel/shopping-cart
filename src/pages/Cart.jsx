@@ -1,9 +1,17 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const Cart = ({ cart }) => {
   const [price, setPrice] = useState(0);
   const [total, setTotal] = useState(0);
   const [taxes, setTaxes] = useState(0);
+
+  useEffect(() => {
+    let sum = 0;
+    for (let i = 0; i < cart.length; i++) {
+      sum += cart[i].price;
+    }
+    setPrice(sum);
+  }, [cart]);
   return (
     <div className="cart">
       <section className="cart-items">
