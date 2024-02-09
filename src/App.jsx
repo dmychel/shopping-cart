@@ -69,7 +69,7 @@ function App() {
           </NavLink>
           <div className="header-cart">
             <NavLink to="cart">Cart</NavLink>
-            <p>{cart.length}</p>
+            <span>{cart.length}</span>
           </div>
         </nav>
       </header>
